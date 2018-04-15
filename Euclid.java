@@ -21,6 +21,7 @@ public class Euclid {
         this.b = b;
     }
     
+    // Euklids Algorithmus zur Bestimmung des größten gemeinsamen Teilers
     public int euclidAlgo(int a, int b){
         if(b == 0){
             return a;
@@ -29,11 +30,16 @@ public class Euclid {
             return euclidAlgo(b, a%b);
         }
     }
-    
+    /*
     public static void main(String[] args){
-        int a = Integer.parseInt(args[0]);
-        int b = Integer.parseInt(args[1]);
-        Euclid obj = new Euclid(a, b);
-        System.out.println("ggT von " + a + " und " + b + ": " + obj.euclidAlgo(a, b));
-    }
+        try{
+            int a = Integer.parseInt(args[0]);
+            int b = Integer.parseInt(args[1]);
+            Euclid obj = new Euclid(a, b);
+            System.out.println("ggT von " + a + " und " + b + ": " + obj.euclidAlgo(a, b));
+        }
+        catch(java.lang.ArrayIndexOutOfBoundsException|java.lang.NumberFormatException e){
+            System.out.println("wrong usage of Euclid." + '\n' + "usage: Euclid <Integer> <Integer>");
+        }
+    }*/
 }
