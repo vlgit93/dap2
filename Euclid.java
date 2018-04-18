@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package dap2Algo;
+import java.io.IOException;
 
 /**
  *
@@ -30,16 +31,25 @@ public class Euclid {
             return euclidAlgo(b, a%b);
         }
     }
-    /*
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         try{
-            int a = Integer.parseInt(args[0]);
-            int b = Integer.parseInt(args[1]);
-            Euclid obj = new Euclid(a, b);
-            System.out.println("ggT von " + a + " und " + b + ": " + obj.euclidAlgo(a, b));
+            if(args.length==2){
+                int a = Integer.parseInt(args[0]);
+                int b = Integer.parseInt(args[1]);
+                if(a>0 && b>0){
+                    Euclid obj = new Euclid(a, b);
+                    System.out.println("ggT von " + a + " und " + b + ": " + obj.euclidAlgo(a, b));
+                }
+            }
+            else{
+                throw new IOException();
+            }
         }
-        catch(java.lang.ArrayIndexOutOfBoundsException|java.lang.NumberFormatException e){
+        catch(IOException e){
             System.out.println("wrong usage of Euclid." + '\n' + "usage: Euclid <Integer> <Integer>");
         }
-    }*/
+        catch(Exception e){
+            System.out.println("wrong usage of Euclid." + '\n' + "usage: Euclid <Integer> <Integer>");
+        }
+    }
 }
